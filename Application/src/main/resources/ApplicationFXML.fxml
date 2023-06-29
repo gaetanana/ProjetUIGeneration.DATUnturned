@@ -110,7 +110,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="191.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" text="Clique" />
+                              <Button fx:id="buttonAide" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" text="Clique" onAction="#onHelpButtonCick" />
                            </children>
                         </HBox>
                      </children>

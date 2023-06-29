@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea9a7894-065c-48aa-a905-2874bb059492" name="Changes" comment="ça avance fort">
+    <list default="true" id="ea9a7894-065c-48aa-a905-2874bb059492" name="Changes" comment="Push mofication">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/HelpFXML.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modele/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modele/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modele/modeleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modele/modeleApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Vue/vueApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vue/vueApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ApplicationFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ApplicationFXML.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -62,7 +61,7 @@
       <recent name="C:\Users\Gaetan\OneDrive - umontpellier.fr\ProjetPersonnel\ProjetUIGeneration.DATUnturned\Application\src\main\resources\fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
+  <component name="RunManager" selected="Application.vueApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.HelloApplication" />
       <module name="demo" />
@@ -111,8 +110,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
         <item itemvalue="Application.vueApplication" />
+        <item itemvalue="Application.main" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -127,7 +126,7 @@
       <updated>1688061653073</updated>
       <workItem from="1688061654211" duration="62000" />
       <workItem from="1688061959957" duration="2644000" />
-      <workItem from="1688064622358" duration="5074000" />
+      <workItem from="1688064622358" duration="5883000" />
     </task>
     <task id="LOCAL-00001" summary="First Push">
       <created>1688062118192</created>
@@ -164,7 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688068451793</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="3 fonctions : &#10;&#10;1) Fonction qui permet de connaitre le nombre de craft d'un item&#10;2) Fonction qui permet de lire les informations de l'item sans le bluePrints&#10;3) Fonction qui permet de récupérer la partie BluePrint">
+      <created>1688069972571</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688069972571</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Push mofication">
+      <created>1688070017734</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688070017734</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +188,19 @@
     <MESSAGE value="Push" />
     <MESSAGE value="ça débute fort" />
     <MESSAGE value="ça avance fort" />
-    <option name="LAST_COMMIT_MESSAGE" value="ça avance fort" />
+    <MESSAGE value="3 fonctions : &#10;&#10;1) Fonction qui permet de connaitre le nombre de craft d'un item&#10;2) Fonction qui permet de lire les informations de l'item sans le bluePrints&#10;3) Fonction qui permet de récupérer la partie BluePrint" />
+    <MESSAGE value="Push mofication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push mofication" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Vue/vueApplication.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,22 @@
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f4f4f4;
+}
+
+.text-title {
+    -fx-fill: #2c3e50;
+    -fx-font-size: 29px;
+    -fx-font-weight: bold;
+}
+
+.text-label {
+    -fx-fill: #2c3e50;
+    -fx-font-size: 15px;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}

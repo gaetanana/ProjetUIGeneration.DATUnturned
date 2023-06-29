@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea9a7894-065c-48aa-a905-2874bb059492" name="Changes" comment="Push">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Vue/vueApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSS/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modele/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modele/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Vue/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +60,7 @@
       <recent name="C:\Users\Gaetan\OneDrive - umontpellier.fr\ProjetPersonnel\ProjetUIGeneration.DATUnturned\Application\src\main\resources\fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.vueApplication">
+  <component name="RunManager" selected="Application.main">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.HelloApplication" />
       <module name="demo" />
@@ -114,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.vueApplication" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.vueApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -130,7 +125,7 @@
       <updated>1688061653073</updated>
       <workItem from="1688061654211" duration="62000" />
       <workItem from="1688061959957" duration="2644000" />
-      <workItem from="1688064622358" duration="797000" />
+      <workItem from="1688064622358" duration="2177000" />
     </task>
     <task id="LOCAL-00001" summary="First Push">
       <created>1688062118192</created>
@@ -146,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688063071175</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Push">
+      <created>1688065433604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688065433604</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

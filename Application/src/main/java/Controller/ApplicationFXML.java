@@ -8,7 +8,6 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.util.Map;
 
-import static Modele.modeleApplication.readDATFile;
 
 public class ApplicationFXML {
 
@@ -24,7 +23,6 @@ public class ApplicationFXML {
         fileChooser.setTitle("Open Resource File");
 
         File file = fileChooser.showOpenDialog(buttonImport.getScene().getWindow());
-        //System.out.println(readDATFile(file));
         //Vérifier que le fichier est bien un .dat
         if (!file.getName().endsWith(".dat")) {
             nomFichier.setText("Erreur : Le fichier n'est pas un .dat");

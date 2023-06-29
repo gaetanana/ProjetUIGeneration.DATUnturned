@@ -20,3 +20,12 @@
     -fx-cursor: hand;
     -fx-font-size: 14px;
 }
+
+.bordered-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #2c3e50;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-padding: 10px;
+    -fx-margin: 10px;
+}

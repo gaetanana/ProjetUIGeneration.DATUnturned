@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,14 +29,13 @@ public class modeleApplication {
                 data.put(parts[0], parts[1]);
             }
         }
-
         return data;
     }
 
     public static Map<String, String> readBlueprintsData(String fileName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
 
-        Map<String, String> data = new HashMap<>();
+        Map<String, String> data = new LinkedHashMap<>();  // Utilisation de LinkedHashMap au lieu de HashMap
         String line;
         boolean isBlueprintsSection = false;
 
@@ -57,6 +57,7 @@ public class modeleApplication {
 
         return data;
     }
+
 
     /**
      * Cette fonction permet de récupérer

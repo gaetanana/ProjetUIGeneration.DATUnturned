@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea9a7894-065c-48aa-a905-2874bb059492" name="Changes" comment="Push mofication">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/HelpFXML.fxml" afterDir="false" />
+    <list default="true" id="ea9a7894-065c-48aa-a905-2874bb059492" name="Changes" comment="Fin de soirée">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modele/modeleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modele/modeleApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ApplicationFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ApplicationFXML.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/HelpFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HelpFXML.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +128,8 @@
       <workItem from="1688061654211" duration="62000" />
       <workItem from="1688061959957" duration="2644000" />
       <workItem from="1688064622358" duration="5883000" />
+      <workItem from="1688070592516" duration="60000" />
+      <workItem from="1688104374362" duration="4727000" />
     </task>
     <task id="LOCAL-00001" summary="First Push">
       <created>1688062118192</created>
@@ -177,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688070017734</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fin de soirée">
+      <created>1688070614510</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688070614510</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +200,8 @@
     <MESSAGE value="ça avance fort" />
     <MESSAGE value="3 fonctions : &#10;&#10;1) Fonction qui permet de connaitre le nombre de craft d'un item&#10;2) Fonction qui permet de lire les informations de l'item sans le bluePrints&#10;3) Fonction qui permet de récupérer la partie BluePrint" />
     <MESSAGE value="Push mofication" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push mofication" />
+    <MESSAGE value="Fin de soirée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fin de soirée" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

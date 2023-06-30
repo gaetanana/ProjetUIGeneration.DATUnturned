@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,7 +13,7 @@
    <children>
       <BorderPane prefHeight="896.0" prefWidth="1412.0">
          <top>
-            <VBox prefHeight="87.0" prefWidth="1412.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="84.0" prefWidth="1412.0" BorderPane.alignment="CENTER">
                <children>
                   <Text fill="#369e3f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-title" text="Modification de fichier .DAT" textAlignment="CENTER" wrappingWidth="1411.48046875">
                      <font>
@@ -53,16 +52,16 @@
                      <children>
                         <HBox prefHeight="69.0" prefWidth="441.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="138.0">
+                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="209.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-label" text="Nom du fichier : " wrappingWidth="112.30078125">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-label" text="Nom du fichier sélectionné : " wrappingWidth="195.30078125">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Text>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="303.0">
+                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="231.0">
                                  <children>
                                     <Text fx:id="nomFichier" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-label">
                                        <font>
@@ -75,24 +74,64 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <VBox prefHeight="68.0" prefWidth="441.0">
+                     <children>
+                        <HBox prefHeight="69.0" prefWidth="441.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="209.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-label" text="Nombre de craft possible :" wrappingWidth="195.30078125">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="231.0">
+                                 <children>
+                                    <Text fx:id="nombreCraftPossible" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-label">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="68.0" prefWidth="441.0">
+                     <children>
+                        <HBox prefHeight="69.0" prefWidth="441.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="209.0">
+                                 <children>
+                                    <Button fx:id="buttonCreateCraft" mnemonicParsing="false" onAction="#onCreateCraftButtonClick" prefHeight="47.0" prefWidth="160.0" text="Créer un craft" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="69.0" prefWidth="231.0">
+                                 <children>
+                                    <Button fx:id="buttonDeleteCraft" onAction="#onDeleteCraftCurrentButtonClick" mnemonicParsing="false" prefHeight="50.0" prefWidth="181.0" text="Supprimer le craft courant" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="69.0" prefWidth="441.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="69.0" prefWidth="498.0">
+                           <children>
+                              <Text fx:id="statusCreateDelete" strokeType="OUTSIDE" strokeWidth="0.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </left>
          <center>
-            <TabPane prefHeight="809.0" prefWidth="1063.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="Craft 1">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-                <Tab text="Craft 2">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
+            <TabPane fx:id="tabPane" prefHeight="589.0" prefWidth="971.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER" />
          </center>
          <bottom>
             <HBox prefHeight="87.0" prefWidth="1412.0" BorderPane.alignment="CENTER">
@@ -110,7 +149,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="191.0">
                            <children>
-                              <Button fx:id="buttonAide" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" text="Clique" onAction="#onHelpButtonCick" />
+                              <Button fx:id="buttonAide" mnemonicParsing="false" onAction="#onHelpButtonCick" prefHeight="36.0" prefWidth="120.0" text="Clique" />
                            </children>
                         </HBox>
                      </children>

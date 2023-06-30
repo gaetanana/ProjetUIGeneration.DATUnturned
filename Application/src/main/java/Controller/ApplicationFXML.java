@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
+import java.util.*;
 
 import static Modele.modeleApplication.getNumberOfBlueprints;
 import static Modele.modeleApplication.readBlueprintsData;
@@ -25,6 +25,9 @@ import static Modele.modeleApplication.readBlueprintsData;
 public class ApplicationFXML {
 
     boolean isFileLoaded = false;
+    int nbCraftAttribut;
+    String cheminAttribut;
+    private Map<Integer, List<HBox>> addedHBoxes = new HashMap<>();
 
     @FXML
     private Button buttonAide;
@@ -40,9 +43,8 @@ public class ApplicationFXML {
     private Text nombreCraftPossible;
     @FXML
     private Text statusCreateDelete;
-
     @FXML
-    private TabPane tabPane; // Remember to add this line at the top of your controller
+    private TabPane tabPane;
 
 
     @FXML
@@ -52,85 +54,171 @@ public class ApplicationFXML {
         fileChooser.setTitle("Open Resource File");
 
         File file = fileChooser.showOpenDialog(buttonImport.getScene().getWindow());
-        //Vérifier que le fichier est bien un .dat
         if (!file.getName().endsWith(".dat")) {
             nomFichier.setText("Erreur : Le fichier n'est pas un .dat");
             nomFichier.setStyle("-fx-fill: red;");
-            //Delete the tabs
             tabPane.getTabs().clear();
             isFileLoaded = false;
             return;
         }
         isFileLoaded = true;
-        //Afficher le nom du fichier dans le textNomFichier
         nomFichier.setText(file.getName());
 
         String chemin = file.getAbsolutePath();
-        //Récupérer le nombre de craft disponible pour cet item
         int nbCraft = getNumberOfBlueprints(chemin);
-        String nbCraftString = Integer.toString(nbCraft);
+        nbCraftAttribut = nbCraft;
+
+        String nbCraftString = Integer.toString(nbCraftAttribut);
         nombreCraftPossible.setText(nbCraftString);
-        Map<String,String> attributDeCraftItem = readBlueprintsData(chemin);
+        Map<String, String> attributDeCraftItem = readBlueprintsData(chemin);
         System.out.println(attributDeCraftItem);
-        // Clear the existing tabs
         tabPane.getTabs().clear();
 
-        // Create new tabs based on nbCraft
-        for (int i = 0; i < nbCraft; i++) {
-            Tab newTab = new Tab("Craft " + (i+1));
+        for (int i = 0; i < nbCraftAttribut; i++) {
+            Tab newTab = new Tab("Craft " + (i + 1));
             VBox vbox = new VBox();
             vbox.setPadding(new Insets(10));
             vbox.setSpacing(8);
 
+            Spinner<Integer> suppliesSpinner = null;
+            List<HBox>[] hboxes = new List[100];
+
             for (Map.Entry<String, String> entry : attributDeCraftItem.entrySet()) {
-                if (entry.getKey().startsWith("Blueprint_"+i+"_")) {
-                    Label label = new Label(entry.getKey() + " : ");
+                String key = entry.getKey();
+                if (key.startsWith("Blueprint_" + i + "_")) {
+                    Label label = new Label(key + " : ");
                     TextField textField = new TextField(entry.getValue());
                     HBox hbox = new HBox();
                     hbox.setSpacing(8);
                     hbox.getChildren().addAll(label, textField);
-                    vbox.getChildren().add(hbox);
+                    if (key.equals("Blueprint_" + i + "_Type") || key.equals("Blueprint_" + i + "_Tool")
+                            || key.equals("Blueprint_" + i + "_Level") || key.equals("Blueprint_" + i + "_Skill")
+                            || key.equals("Blueprint_" + i + "_Build")) {
+                        vbox.getChildren().add(hbox);
+                    }
+                    else if (key.equals("Blueprint_" + i + "_Supplies")) {
+                        int initialSupplies = Integer.parseInt(entry.getValue());
+                        suppliesSpinner = new Spinner<>(0, 100, initialSupplies);
+                        HBox hboxSupplies = new HBox();
+                        hboxSupplies.setSpacing(8);
+                        hboxSupplies.getChildren().addAll(new Label(key + " : "), suppliesSpinner);
+                        vbox.getChildren().add(hboxSupplies);
+                    }
+                    else if (key.startsWith("Blueprint_" + i + "_Supply")) {
+                        int supplyIndex = Integer.parseInt(key.split("_")[3]);
+                        if (hboxes[supplyIndex] == null) {
+                            hboxes[supplyIndex] = new ArrayList<>();
+                        }
+                        hboxes[supplyIndex].add(hbox);
+                    }
                 }
             }
-            newTab.setContent(vbox);
-            tabPane.getTabs().add(newTab);
 
+            // Insert supply boxes after the Supplies spinner.
+            for (List<HBox> hBoxList : hboxes) {
+                if (hBoxList != null) {
+                    vbox.getChildren().addAll(hBoxList);
+                }
+            }
+
+            if (suppliesSpinner != null) {
+                int finalI = i;
+                suppliesSpinner.valueProperty().addListener((obs, oldValue, newValue) -> {
+                    System.out.println("oldValue = " + oldValue);
+                    System.out.println("newValue = " + newValue);
+                    if (newValue > oldValue) {
+                        List<HBox> newHBoxes = new ArrayList<>();
+
+                        Label labelId = new Label("Blueprint_" + finalI + "_Supply_" + newValue + "_ID : ");
+                        TextField textFieldId = new TextField();
+                        HBox hboxId = new HBox();
+                        hboxId.setSpacing(8);
+                        hboxId.getChildren().addAll(labelId, textFieldId);
+
+                        Label labelAmount = new Label("Blueprint_" + finalI + "_Supply_" + newValue + "_Amount : ");
+                        TextField textFieldAmount = new TextField();
+                        HBox hboxAmount = new HBox();
+                        hboxAmount.setSpacing(8);
+                        hboxAmount.getChildren().addAll(labelAmount, textFieldAmount);
+
+                        newHBoxes.add(hboxId);
+                        newHBoxes.add(hboxAmount);
+
+                        vbox.getChildren().addAll(newHBoxes);
+                        hboxes[newValue] = newHBoxes;
+                    }
+                    else if (newValue == 0) {
+                        for (int j = 0; j < oldValue; j++) {
+                            List<HBox> toRemove = hboxes[j];
+                            if (toRemove != null) {
+                                vbox.getChildren().removeAll(toRemove);
+                                hboxes[j] = null;
+                            }
+                        }
+                    }
+                    else if (newValue < oldValue) {
+                        List<HBox> toRemove = hboxes[oldValue - 1];
+                        if (toRemove != null) {
+                            vbox.getChildren().removeAll(toRemove);
+                            hboxes[oldValue - 1] = null;
+                        }
+                    }
+
+                });
+            }
+
+
+            ScrollPane sp = new ScrollPane();
+            sp.setContent(vbox);
+            newTab.setContent(sp);
+            tabPane.getTabs().add(newTab);
         }
     }
 
 
+
     @FXML
-    protected void onCreateCraftButtonClick(){
-        if(!isFileLoaded){
+    protected void onCreateCraftButtonClick() {
+        if (!isFileLoaded) {
             statusCreateDelete.setText("Erreur : Aucun fichier n'a été chargé");
             statusCreateDelete.setStyle("-fx-fill: red;");
             return;
         }
 
         //Créer une nouvelle tab
-        Tab newTab = new Tab("Craft " + (tabPane.getTabs().size()+1));
+        nbCraftAttribut++;
+        Tab newTab = new Tab("Craft " + (nbCraftAttribut));
+        System.out.println(nbCraftAttribut);
         VBox vbox = new VBox();
         vbox.setPadding(new Insets(10));
         vbox.setSpacing(8);
-
 
         tabPane.getTabs().add(newTab);
 
     }
 
     @FXML
-    protected void onDeleteCraftCurrentButtonClick(){
-        if(!isFileLoaded){
+    protected void onDeleteCraftCurrentButtonClick() {
+        if (!isFileLoaded) {
             statusCreateDelete.setText("Erreur : Aucun fichier n'a été chargé");
             statusCreateDelete.setStyle("-fx-fill: red;");
             return;
         }
-        if(tabPane.getTabs().size() == 0){
+        if (tabPane.getTabs().size() == 0) {
             statusCreateDelete.setText("Erreur : Aucun craft n'a été créé");
             statusCreateDelete.setStyle("-fx-fill: red;");
             return;
         }
-        tabPane.getTabs().remove(tabPane.getTabs().size()-1);
+        Tab currentTab = tabPane.getSelectionModel().getSelectedItem(); // récupérer l'onglet actuellement sélectionné
+        if (currentTab != null) {
+            tabPane.getTabs().remove(currentTab); // supprimer l'onglet actuellement sélectionné
+            nbCraftAttribut--;
+            //Met à jour tous les onglets
+            for (int i = 0; i < nbCraftAttribut; i++) {
+                Tab tab = tabPane.getTabs().get(i);
+                tab.setText("Craft " + (i + 1));
+            }
+        }
     }
 
 

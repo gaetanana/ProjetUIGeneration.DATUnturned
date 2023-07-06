@@ -7,6 +7,8 @@
     <list default="true" id="ea9a7894-065c-48aa-a905-2874bb059492" name="Changes" comment="Push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ApplicationFXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modele/modeleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modele/modeleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ApplicationFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ApplicationFXML.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,10 @@
       <workItem from="1688061959957" duration="2644000" />
       <workItem from="1688064622358" duration="5883000" />
       <workItem from="1688070592516" duration="60000" />
-      <workItem from="1688104374362" duration="16706000" />
+      <workItem from="1688104374362" duration="26043000" />
+      <workItem from="1688149622089" duration="59000" />
+      <workItem from="1688224321747" duration="1597000" />
+      <workItem from="1688652342298" duration="3642000" />
     </task>
     <task id="LOCAL-00001" summary="First Push">
       <created>1688062118192</created>
@@ -191,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688110601807</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Push">
+      <created>1688130171387</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1688130171387</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

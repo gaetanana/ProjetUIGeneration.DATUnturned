@@ -14,7 +14,7 @@ public class modeleApplication {
     public static Map<String, String> readDataWithOutBluePrints(String fileName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
 
-        Map<String, String> data = new HashMap<>();
+        Map<String, String> data = new LinkedHashMap<>(); // changed here
         String line;
 
         while ((line = reader.readLine()) != null) {

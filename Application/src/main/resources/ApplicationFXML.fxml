@@ -167,7 +167,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="191.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" text="Générer" />
+                              <Button fx:id="buttonGenererDAT" onAction="#generationDuFichier" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" text="Générer" />
                            </children>
                         </HBox>
                      </children>
